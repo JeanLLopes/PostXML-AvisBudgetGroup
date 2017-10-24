@@ -50,8 +50,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="UnitTestPing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PostXML-AvisBudgetGroup.Model\PostXML-AvisBudgetGroup.Model.csproj">
+      <Project>{69D875B3-4BD0-467B-B70A-52D902C482E1}</Project>
+      <Name>PostXML-AvisBudgetGroup.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PostXML-AvisBudgetGroup.Service\PostXML-AvisBudgetGroup.Service.csproj">
+      <Project>{7730D2E7-7509-4BFA-B86A-C132309C31B7}</Project>
+      <Name>PostXML-AvisBudgetGroup.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

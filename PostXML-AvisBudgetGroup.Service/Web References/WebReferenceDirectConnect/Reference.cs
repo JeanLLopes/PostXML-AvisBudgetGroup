@@ -15678,7 +15678,7 @@ namespace PostXML_AvisBudgetGroup.Service.WebReferenceDirectConnect
         
         private OTA_PingRQTarget targetField;
         
-        private decimal versionField;
+        private string versionField;
         
         private string transactionIdentifierField;
         
@@ -15753,7 +15753,7 @@ namespace PostXML_AvisBudgetGroup.Service.WebReferenceDirectConnect
         
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
-        public decimal Version {
+        public string Version {
             get {
                 return this.versionField;
             }

@@ -14,7 +14,7 @@ namespace PostXML_AvisBudgetGroup.Service.Method
             //RequestPing - OTA_PingRQ
             var otaPingRq = new OTA_PingRQ();
             otaPingRq.EchoToken = Guid.NewGuid().ToString();
-            otaPingRq.Version = 1;
+            otaPingRq.Version = objectItem.Version;
 
 
             //RequestPing - OTA_PingRQ - EchoData
