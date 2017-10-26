@@ -19,7 +19,7 @@ namespace PostXML_AvisBudgetGroup.Test
                 Vendor = "Avis",
                 UserId = "usuario", //INSERIR USUARIO AO WEB SERVICE
                 Password = "senha", //INSERIR SENHA AO WEB SERVICE
-                Url = "https://services.carrental.com/wsbang/HTTPSOAPRouter/ws9071",
+                Url = "https://qaservices.carrental.com/wsbang/HTTPSOAPRouter/ws9071",
                 EchoToken = Guid.NewGuid().ToString()
             };
 
