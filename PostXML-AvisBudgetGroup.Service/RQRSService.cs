@@ -8,7 +8,7 @@ namespace PostXML_AvisBudgetGroup.Service
 
     public class RQRSServices
     {
-        public Object SendPing(PingModel dataRequest)
+        public object SendPing(PingModel dataRequest)
         {
             var classRequest = PingAbgService.QueryRequestPingAbg(dataRequest);
             var xmlRequest = SerializeXmlService.SerializeXml(classRequest);

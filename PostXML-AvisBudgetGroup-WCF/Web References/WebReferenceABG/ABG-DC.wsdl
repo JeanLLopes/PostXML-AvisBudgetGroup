@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns="http://wsg.avis.com/wsbang/authInAny" xmlns:tns="http://wsg.avis.com/wsbang" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ota="http://www.opentravel.org/OTA/2003/05" xmlns="http://wsg.avis.com/wsbang" targetNamespace="http://wsg.avis.com/wsbang" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://wsg.avis.com/wsbang/authInAny">
+      <xs:element name="credentials">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="userID" type="xs:string" />
+            <xs:element name="password" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.opentravel.org/OTA/2003/05">
+      <xs:include schemaLocation="ABG-DC-OTA.xsd" />
+      <xs:element name="Request-Ping">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_PingRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-AvailRate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehAvailRateRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-Cancel">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehCancelRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-LocSearch">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehLocSearchRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-Modify">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehModifyRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-RateRule">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehRateRuleRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-Create">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehResRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Request-RetRes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="ota:OTA_VehRetResRQ" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="all_request_header">
+    <wsdl:part name="request_header" element="ns:credentials" />
+  </wsdl:message>
+  <wsdl:message name="PingRequestMessage">
+    <wsdl:part name="body" element="ota:Request-Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_PingRS" />
+  </wsdl:message>
+  <wsdl:message name="VehAvailRateRequestMessage">
+    <wsdl:part name="body" element="ota:Request-AvailRate" />
+  </wsdl:message>
+  <wsdl:message name="VehAvailRateResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehAvailRateRS" />
+  </wsdl:message>
+  <wsdl:message name="VehCancelRequestMessage">
+    <wsdl:part name="body" element="ota:Request-Cancel" />
+  </wsdl:message>
+  <wsdl:message name="VehCancelResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehCancelRS" />
+  </wsdl:message>
+  <wsdl:message name="VehLocSearchRequestMessage">
+    <wsdl:part name="body" element="ota:Request-LocSearch" />
+  </wsdl:message>
+  <wsdl:message name="VehLocSearchResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehLocSearchRS" />
+  </wsdl:message>
+  <wsdl:message name="VehModifyRequestMessage">
+    <wsdl:part name="body" element="ota:Request-Modify" />
+  </wsdl:message>
+  <wsdl:message name="VehModifyResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehModifyRS" />
+  </wsdl:message>
+  <wsdl:message name="VehRateRuleRequestMessage">
+    <wsdl:part name="body" element="ota:Request-RateRule" />
+  </wsdl:message>
+  <wsdl:message name="VehRateRuleResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehRateRuleRS" />
+  </wsdl:message>
+  <wsdl:message name="VehResRequestMessage">
+    <wsdl:part name="body" element="ota:Request-Create" />
+  </wsdl:message>
+  <wsdl:message name="VehResResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehResRS" />
+  </wsdl:message>
+  <wsdl:message name="VehRetResRequestMessage">
+    <wsdl:part name="body" element="ota:Request-RetRes" />
+  </wsdl:message>
+  <wsdl:message name="VehRetResResponseMessage">
+    <wsdl:part name="body" element="ota:OTA_VehRetResRS" />
+  </wsdl:message>
+  <wsdl:portType name="ABGType">
+    <wsdl:operation name="Ping">
+      <wsdl:input message="tns:PingRequestMessage" />
+      <wsdl:output message="tns:PingResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehAvailRate">
+      <wsdl:input message="tns:VehAvailRateRequestMessage" />
+      <wsdl:output message="tns:VehAvailRateResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehCancel">
+      <wsdl:input message="tns:VehCancelRequestMessage" />
+      <wsdl:output message="tns:VehCancelResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehLocSearch">
+      <wsdl:input message="tns:VehLocSearchRequestMessage" />
+      <wsdl:output message="tns:VehLocSearchResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehModify">
+      <wsdl:input message="tns:VehModifyRequestMessage" />
+      <wsdl:output message="tns:VehModifyResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehRateRule">
+      <wsdl:input message="tns:VehRateRuleRequestMessage" />
+      <wsdl:output message="tns:VehRateRuleResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehRes">
+      <wsdl:input message="tns:VehResRequestMessage" />
+      <wsdl:output message="tns:VehResResponseMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VehRetRes">
+      <wsdl:input message="tns:VehRetResRequestMessage" />
+      <wsdl:output message="tns:VehRetResResponseMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ABGBinding" type="tns:ABGType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="Ping" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehAvailRate">
+      <soap:operation soapAction="VehAvailRate" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehCancel">
+      <soap:operation soapAction="VehCancel" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehLocSearch">
+      <soap:operation soapAction="VehLocSearch" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehModify">
+      <soap:operation soapAction="VehModify" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehRateRule">
+      <soap:operation soapAction="VehRateRule" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehRes">
+      <soap:operation soapAction="VehRes" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VehRetRes">
+      <soap:operation soapAction="VehRetRes" style="document" />
+      <wsdl:input>
+        <soap:header message="tns:all_request_header" part="request_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AvisBudget">
+    <wsdl:port name="ABGQAPort" binding="tns:ABGBinding">
+      <soap:address location="https://qaservices.carrental.com/wsbang/HTTPSOAPRouter/ws9071" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
