@@ -18,8 +18,8 @@ namespace PostXML_AvisBudgetGroup.Test
                 Message = "Mensagem de Teste - Ambiente de Producao",
                 Version = "1.0",
                 Vendor = "Avis",
-                UserId = "COOBRASTUR", //INSERIR USUARIO AO WEB SERVICE
-                Password = @"'`EH{w{QmSAR", //INSERIR SENHA AO WEB SERVICE
+                UserId = "***", //INSERIR USUARIO AO WEB SERVICE
+                Password = "***", //INSERIR SENHA AO WEB SERVICE
                 Url = "https://qaservices.carrental.com/wsbang/HTTPSOAPRouter/ws9071",
                 EchoToken = Guid.NewGuid().ToString()
             };
