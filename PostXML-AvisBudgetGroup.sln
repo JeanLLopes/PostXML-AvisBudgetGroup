@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostXML-AvisBudgetGroup.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostXML-AvisBudgetGroup-WCF", "PostXML-AvisBudgetGroup-WCF\PostXML-AvisBudgetGroup-WCF.csproj", "{CEA63230-ACF0-4CF0-AC69-FC45F5030A5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostXML-AvisBudgetGroup-Web", "PostXML-AvisBudgetGroup-Web\PostXML-AvisBudgetGroup-Web.csproj", "{7B981C53-34B9-4270-B664-91857AF7BFF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CEA63230-ACF0-4CF0-AC69-FC45F5030A5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEA63230-ACF0-4CF0-AC69-FC45F5030A5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEA63230-ACF0-4CF0-AC69-FC45F5030A5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B981C53-34B9-4270-B664-91857AF7BFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B981C53-34B9-4270-B664-91857AF7BFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B981C53-34B9-4270-B664-91857AF7BFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B981C53-34B9-4270-B664-91857AF7BFF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

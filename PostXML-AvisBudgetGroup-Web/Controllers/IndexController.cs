@@ -1,15 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PostXML_AvisBudgetGroup.Model;
+﻿using PostXML_AvisBudgetGroup.Model;
 using PostXML_AvisBudgetGroup.Service;
 using System;
+using System.Web.Mvc;
 
-namespace PostXML_AvisBudgetGroup.Test
+namespace PostXML_AvisBudgetGroup_Web.Controllers
 {
-    [TestClass]
-    public class UnitTestPing
+    public class IndexController : Controller
     {
-        [TestMethod]
-        public void TestMethodPingRequest()
+        // GET: Index
+        public ActionResult Index()
         {
             #region OBJETO
             var pingRequest = new PingModel
@@ -17,16 +16,18 @@ namespace PostXML_AvisBudgetGroup.Test
                 Message = "Mensagem de Teste - Ambiente de Produção",
                 Version = "1.0",
                 Vendor = "Avis",
-                UserId = "usuario", //INSERIR USUARIO AO WEB SERVICE
-                Password = "senha", //INSERIR SENHA AO WEB SERVICE
+                UserId = "COOBRASTUR", //INSERIR USUARIO AO WEB SERVICE
+                Password = @"'`EH{w{QmSAR", //INSERIR SENHA AO WEB SERVICE
                 Url = "https://qaservices.carrental.com/wsbang/HTTPSOAPRouter/ws9071",
                 EchoToken = Guid.NewGuid().ToString()
             };
 
             #endregion
             var rQRSServices = new RQRSServices();
-            Assert.IsNotNull((PingModel)rQRSServices.SendPing(pingRequest));
 
+            var result = rQRSServices.SendPing(pingRequest);
+
+            return View(result);
         }
     }
 }
