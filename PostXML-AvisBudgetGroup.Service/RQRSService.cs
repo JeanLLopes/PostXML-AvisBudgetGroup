@@ -14,7 +14,7 @@ namespace PostXML_AvisBudgetGroup.Service
             var soapXmlRequest = PostXmlAbgService.InvokeSoapEnvelopment(xmlRequest, dataRequest.UserId, dataRequest.Password);
             var responseXmlPing = PostXmlAbgService.PostXml(dataRequest.Url, soapXmlRequest);
             var xmlResponseTreatment = ResponseTreatmentService.ResponseTreatment(responseXmlPing, "OTA_PingRS");
-            return DeserializeXmlService.DeserializeXml(xmlRequest, new RequestPing());
+            return DeserializeXmlService.DeserializeXml(xmlResponseTreatment, new OTA_PingRS());
         }
     }
 }

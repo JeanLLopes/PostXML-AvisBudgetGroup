@@ -9,7 +9,7 @@ namespace PostXML_AvisBudgetGroup_WCF
     {
 
         [OperationContract]
-        RequestPing GetPostPingABG();
+        PostXML_AvisBudgetGroup.Service.WebReferenceDirectConnect.OTA_PingRS GetPostPingABG();
 
         // TODO: Add your service operations here
     }

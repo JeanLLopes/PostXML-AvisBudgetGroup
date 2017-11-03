@@ -24,10 +24,8 @@ namespace PostXML_AvisBudgetGroup_Web.Controllers
 
             #endregion
             var rQRSServices = new RQRSServices();
-
-            var result = rQRSServices.SendPing(pingRequest);
-
-            return View(result);
+            var resultDeserialize = (PostXML_AvisBudgetGroup.Service.WebReferenceDirectConnect.OTA_PingRS)rQRSServices.SendPing(pingRequest);
+            return View(resultDeserialize);
         }
     }
 }

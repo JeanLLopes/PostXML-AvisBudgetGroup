@@ -10,7 +10,7 @@ namespace PostXML_AvisBudgetGroup_WCF
     public class Service1 : IService1
     {
 
-        public RequestPing GetPostPingABG()
+        public OTA_PingRS GetPostPingABG()
         {
             #region OBJETO
             var pingRequest = new PingModel
@@ -26,7 +26,8 @@ namespace PostXML_AvisBudgetGroup_WCF
 
             #endregion
             var rQRSServices = new RQRSServices();
-            return (RequestPing)rQRSServices.SendPing(pingRequest);
+            var resultDeserialize = (PostXML_AvisBudgetGroup.Service.WebReferenceDirectConnect.OTA_PingRS)rQRSServices.SendPing(pingRequest);
+            return resultDeserialize;
         }
     }
 }

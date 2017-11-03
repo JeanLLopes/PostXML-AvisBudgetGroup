@@ -54,6 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PostXML-AvisBudgetGroup-WCF\PostXML-AvisBudgetGroup-WCF.csproj">
+      <Project>{CEA63230-ACF0-4CF0-AC69-FC45F5030A5C}</Project>
+      <Name>PostXML-AvisBudgetGroup-WCF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PostXML-AvisBudgetGroup.Model\PostXML-AvisBudgetGroup.Model.csproj">
       <Project>{69D875B3-4BD0-467B-B70A-52D902C482E1}</Project>
       <Name>PostXML-AvisBudgetGroup.Model</Name>

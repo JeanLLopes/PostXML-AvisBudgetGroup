@@ -24,6 +24,9 @@ namespace PostXML_AvisBudgetGroup.Service
 
                 payloadXML = payloadXML.Remove(indiceFimPayload + 3 + qtdCharsPayloadType);
 
+                //TRATAMENTO PARA PING
+                payloadXML = payloadXML.Replace("xsi:schemaLocation=\"http://www.opentravel.org/OTA/2008/05 OTA_PingRS\"", string.Empty).Replace("xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"","").Replace("xmlns=\"http://www.opentravel.org/OTA/2003/05\"","");
+
                 return payloadXML;
 
             }
